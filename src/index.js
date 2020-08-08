@@ -1,12 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import './fonts/fonts.css';
 import * as serviceWorker from './serviceWorker';
+import './index.css';
+import Header from './Header';
+import Menu from './Menu.js';
+import CardList from './CardList.js';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Header />
+    <Menu />
+    <CardList/>
   </React.StrictMode>,
   document.getElementById('root')
 );
