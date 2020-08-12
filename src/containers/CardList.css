@@ -1,0 +1,19 @@
+.CardList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    background-color: #20232a;
+    padding-bottom: 25px;
+}
+.back {
+    background-color: #20232a;
+    height: 100vh;
+}
+.Title {
+    display: flex;
+    font-size: 24px;
+    font-family: 'Press Start 2P', cursive;
+    margin: 20px;
+    color:#61dafb;
+}

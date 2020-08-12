@@ -3,15 +3,21 @@ import ReactDOM from 'react-dom';
 import './fonts/fonts.css';
 import * as serviceWorker from './serviceWorker';
 import './index.css';
-import Header from './Header';
-import Menu from './Menu.js';
-import CardList from './CardList.js';
+import Header from './containers/Header';
+import Menu from './containers/Menu.js';
+// import GameArea from './GameArea';
+import Area from './containers/Area';
+import CardList from './containers/CardList.js';
+import {games} from './games';
 
 ReactDOM.render(
   <React.StrictMode>
     <Header />
     <Menu />
-    <CardList/>
+    <Area gameName="Game_Name"/>
+    {/*<Area gameName="ast"/>
+    <GameArea />
+     <CardList games={games}/>, */}
   </React.StrictMode>,
   document.getElementById('root')
 );

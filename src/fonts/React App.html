@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:3000/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="icon" href="http://localhost:3000/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Web site created using create-react-app">
+    <link rel="apple-touch-icon" href="http://localhost:3000/logo192.png">
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="http://localhost:3000/manifest.json">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  <style type="text/css">/* cyrillic-ext */
+@font-face {
+  font-family: 'Press Start 2P';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Press Start 2P Regular'), local('PressStart2P-Regular'), url(https://fonts.gstatic.com/s/pressstart2p/v8/e3t4euO8T-267oIAQAu6jDQyK3nYivN04w.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Press Start 2P';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Press Start 2P Regular'), local('PressStart2P-Regular'), url(https://fonts.gstatic.com/s/pressstart2p/v8/e3t4euO8T-267oIAQAu6jDQyK3nRivN04w.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'Press Start 2P';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Press Start 2P Regular'), local('PressStart2P-Regular'), url(https://fonts.gstatic.com/s/pressstart2p/v8/e3t4euO8T-267oIAQAu6jDQyK3nWivN04w.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Press Start 2P';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Press Start 2P Regular'), local('PressStart2P-Regular'), url(https://fonts.gstatic.com/s/pressstart2p/v8/e3t4euO8T-267oIAQAu6jDQyK3nbivN04w.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Press Start 2P';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Press Start 2P Regular'), local('PressStart2P-Regular'), url(https://fonts.gstatic.com/s/pressstart2p/v8/e3t4euO8T-267oIAQAu6jDQyK3nVivM.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style><style type="text/css">body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+</style><style type="text/css">.head {
+    min-height: 100px;
+    display: grid;
+    text-align: center;
+    justify-content: center;
+    color: #61dafb;
+    background-color: #20232a;
+    font-size: 3rem;
+    font-family: 'Press Start 2P', cursive;
+}</style><style type="text/css">.Button {
+    display: flex;
+    justify-content: center;
+    width: 8em;
+    padding: 10px;
+}
+.Button:hover {
+    cursor: pointer;
+}
+.text {
+    font-weight: bold;
+
+}
+.Dropdown:active {
+    
+}</style><style type="text/css">.Menu {
+    display: flex;
+    justify-content: center;
+    color: #61dafb;
+    background-image: linear-gradient(to top, #20232a, #1d2126, #1b1e23, #181c1f, #16191c, #16191c, #16191c, #16191c, #181c1f, #1b1e23, #1d2126, #20232a);
+    /*background-image: linear-gradient(to top, #20232a, #262a32, #2c303a, #333742, #393e4a);
+    background-image: linear-gradient(to right top, #0a1589, #1f2796, #2e38a3, #3c48b0, #4a59bc);*/
+}</style><style type="text/css">.Card {
+    display: flex;
+    flex-direction: column;
+    transition: transform .2s;
+    height: 250px;
+    width: 200px;
+    /* margin: 20px 0px 5px 20px; */
+    /*background-image: linear-gradient(to top, #4958cf, #3a4ba6, #2f3d7e, #272f58, #1e2134);*/
+    background-color: #7E889F;
+    /*background-image: linear-gradient(to top, #5869ee, #5465d3, #5261b8, #515b9e, #4f5683);
+     background-color: rgb(108, 236, 176);*/
+    justify-content: center;
+    align-items: center;
+    border-radius: 10%;
+}
+.Card:hover{
+    cursor: pointer;
+    transform: scale(1.15);
+}
+.game_name {
+    justify-content: center;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    font-size: 14px;
+    font-family: 'Press Start 2P', cursive;
+    line-height: 17px;
+}
+img {
+    border-radius: 10%;
+    height: 160px;
+    width: 170px;
+}</style><style type="text/css">.CardList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    grid-gap: 20px;
+    gap: 20px;
+    background-color: #20232a;
+    padding-bottom: 25px;
+}
+.back {
+    background-color: #20232a;
+}
+.Title {
+    display: flex;
+    font-size: 24px;
+    font-family: 'Press Start 2P', cursive;
+    color:#61dafb;
+    background-color: #20232a;
+    line-height: 20px;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+}</style></head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"><div class="head"><div style="align-self: center;">FliPER</div></div><div class="Menu"><div class="Button"><div class="text">Home</div></div><div class="Button"><div class="text">Games</div></div><div class="Button"><div class="text">Register</div></div><div class="Button"><div class="text">Upload</div></div><div class="Button"><div class="text">Random Game</div></div><div class="Button"><div class="text">About</div></div></div><div class="back"><div class="Title">GAMES</div><div class="CardList"><div class="Card"><img src="./React App_files/asteroids.c8ab11b3.jpg" alt="asteroids"><h1 class="game_name">ASTEROIDS</h1></div><div class="Card"><img src="./React App_files/space invaders.abaf530f.jpg" alt="space invaders"><h1 class="game_name">SPACE INVADERS</h1></div><div class="Card"><img alt="none"><h1 class="game_name">NONE</h1></div><div class="Card"><img alt="none"><h1 class="game_name">NONE</h1></div><div class="Card"><img alt="none"><h1 class="game_name">NONE</h1></div><div class="Card"><img alt="none"><h1 class="game_name">NONE</h1></div><div class="Card"><img alt="none"><h1 class="game_name">NONE</h1></div><div class="Card"><img alt="none"><h1 class="game_name">NONE</h1></div><div class="Card"><img alt="none"><h1 class="game_name">NONE</h1></div><div class="Card"><img alt="none"><h1 class="game_name">NONE</h1></div><div class="Card"><img alt="none"><h1 class="game_name">NONE</h1></div><div class="Card"><img alt="none"><h1 class="game_name">NONE</h1></div></div></div></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <script src="./React App_files/bundle.js.download"></script><script src="./React App_files/0.chunk.js.download"></script><script src="./React App_files/main.chunk.js.download"></script>
+
+</body></html>

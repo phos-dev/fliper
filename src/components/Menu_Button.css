@@ -1,0 +1,13 @@
+.Button {
+    display: flex;
+    justify-content: center;
+    width: 150px;
+    padding: 10px;
+}
+.Button:hover {
+    cursor: pointer;
+}
+.text {
+    font-weight: bold;
+
+}

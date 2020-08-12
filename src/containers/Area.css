@@ -1,0 +1,26 @@
+.backk {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #20232a;
+}
+.gameName {
+    font-size: 23px;
+    font-family: 'Press Start 2P', cursive;
+    margin: 20px;
+    color:#61dafb;
+}
+.gamePlayer {
+    min-height: 500px;
+    min-width: 800px;
+    background-color: black;
+}
+.winner {
+    font-size: 13px;
+    margin: 15px;
+    margin-bottom: 50px;
+    font-weight: 100;
+    font-family: 'Press Start 2P', cursive;
+    color:white;
+
+}
