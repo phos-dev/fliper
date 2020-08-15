@@ -5,17 +5,27 @@ import * as serviceWorker from './serviceWorker';
 import './index.css';
 import Header from './containers/Header';
 import Menu from './containers/Menu.js';
+import {Provider} from 'react-redux';
+import {createStore} from 'redux';
 // import GameArea from './GameArea';
 import Area from './containers/Area';
 import CardList from './containers/CardList.js';
 import {games} from './games';
+import {addToCatalog} from './reducers';
 
+
+
+const store = createStore(addToCatalog);
 ReactDOM.render(
   <React.StrictMode>
-    <Header />
-    <Menu />
-    <Area gameName="Game_Name"/>
-    {/*<Area gameName="ast"/>
+    <Provider store={store}>
+      <Header />
+      <Menu />
+      <CardList/>
+    </Provider >
+    
+    {/*<Area gameName="Game_Name"/>
+    <Area gameName="ast"/>
     <GameArea />
      <CardList games={games}/>, */}
   </React.StrictMode>,

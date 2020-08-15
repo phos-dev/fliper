@@ -12,12 +12,12 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.1",
-    "react-scripts": "3.4.1",
+    "react-scripts": "^3.4.3",
     "redux": "^4.0.5",
     "save-dev": "0.0.1-security"
   },
   "scripts": {
-    "start": "PORT=8000 react-scripts start",
+    "start": "react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
