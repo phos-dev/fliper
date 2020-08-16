@@ -28,7 +28,7 @@ class CardList extends Component {
                 <div className="Title">GAMES</div>
                 <div className="CardList">
                     {cardComponent}
-                    <button onClick={onAdd}></button>
+                    <button onClick={onAdd}>Clique aqui para adcionar algo!</button>
                 </div>
             </div>
         );

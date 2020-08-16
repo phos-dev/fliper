@@ -10,7 +10,7 @@ class Menu extends Component {
             <div className='Menu'>
                 <MenuButton text="Home"/>
                 <MenuDropdownButton text="Games"/>
-                <MenuButton text="Register"/>
+                <MenuButton text="Login"/>
                 <MenuButton text="Upload"/>
                 <MenuButton text="Random Game"/>
                 <MenuButton text="About"/>

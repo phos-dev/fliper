@@ -4,6 +4,7 @@ import Area from './Area';
 import CardList from './CardList.js';
 import TopBar from './topbar';
 import './App.css';
+import Login from './Login';
 
 const mapStateToProps = state => {
     return {
@@ -12,19 +13,23 @@ const mapStateToProps = state => {
 }
 
 class App extends Component {
+    showPG = (actualPage) => {
+        switch(actualPage) {
+            case 'HOME':
+                return <CardList/>
+            case 'LOGIN':
+                return <Login/>
+            default:
+                return <Area/>
+        }
+    }
     render() {
         const {actualPage} = this.props;
         console.log(actualPage);
         return (
             <div>
                 <TopBar/>
-                {
-                    (actualPage == 'HOME') 
-                    ?
-                    <CardList/>
-                    :
-                    <Area/>
-                }
+                {this.showPG(actualPage)}
             </div>
         );
     }
