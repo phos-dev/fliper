@@ -1,33 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './fonts/fonts.css';
+import App from './containers/App'
 import * as serviceWorker from './serviceWorker';
-import './index.css';
-import Header from './containers/Header';
-import Menu from './containers/Menu.js';
 import {Provider} from 'react-redux';
-import {createStore} from 'redux';
-// import GameArea from './GameArea';
-import Area from './containers/Area';
-import CardList from './containers/CardList.js';
-import {games} from './games';
-import {addToCatalog} from './reducers';
+import {createStore, applyMiddleware, combineReducers} from 'redux';
+import {createLogger} from 'redux-logger';
+import {addToCatalog, pageController} from './reducers';
 
+const rootReducer = combineReducers({addToCatalog, pageController});
+const store = createStore(rootReducer, applyMiddleware(createLogger()));
 
-
-const store = createStore(addToCatalog);
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Header />
-      <Menu />
-      <CardList/>
-    </Provider >
-    
-    {/*<Area gameName="Game_Name"/>
-    <Area gameName="ast"/>
-    <GameArea />
-     <CardList games={games}/>, */}
+      <App/>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

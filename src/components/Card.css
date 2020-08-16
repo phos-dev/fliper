@@ -9,6 +9,10 @@
     align-items: center;
     border-radius: 10%;
 }
+.Card h1 {
+    overflow-wrap: break-word;
+    max-width: 90%;
+}
 .Card:hover{
     cursor: pointer;
     transform: scale(1.15);
@@ -24,9 +28,11 @@ img {
     border-radius: 10%;
     height: 160px;
     width: 170px;
+    margin-top: 10px;
 }
 .notFound {
     display:flex;
+    margin-top: 10px;
     justify-content: center;
     align-items: center;
     border-radius: 10%;

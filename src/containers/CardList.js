@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import Card from '../components/Card';
-import {games} from '../games';
 import {connect} from 'react-redux';
 import './CardList.css';
 import {newGame} from '../actions';
+
 const mapStateToProps = state => {
     return {
-        Games: state.Games
+        Games: state.addToCatalog.Games
     }
 }
 const mapDispatchToProps = dispatch => {
@@ -15,16 +15,6 @@ const mapDispatchToProps = dispatch => {
     }
 }
 class CardList extends Component {
-    constructor(props) {
-         super(props);
-        // this.state = {
-        //     Games: games,
-        // };
-    }
-    // onAdd = (newG) => {
-    //     this.setState({Games: this.state.Games.concat([newG])})
-    // }
-    
     render() {
         
         const {Games, onAdd} = this.props;
