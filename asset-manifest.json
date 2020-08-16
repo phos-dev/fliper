@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.86ebb828.chunk.css",
-    "main.js": "/static/js/main.4889330b.chunk.js",
-    "main.js.map": "/static/js/main.4889330b.chunk.js.map",
+    "main.css": "/static/css/main.1401dc98.chunk.css",
+    "main.js": "/static/js/main.a7dadd67.chunk.js",
+    "main.js.map": "/static/js/main.a7dadd67.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.61c1d36a.js",
     "runtime-main.js.map": "/static/js/runtime-main.61c1d36a.js.map",
     "static/js/2.b3d8ac97.chunk.js": "/static/js/2.b3d8ac97.chunk.js",
     "static/js/2.b3d8ac97.chunk.js.map": "/static/js/2.b3d8ac97.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.a3cdf35039f756f37db7883325e72817.js": "/precache-manifest.a3cdf35039f756f37db7883325e72817.js",
+    "precache-manifest.ca9f003efe0f476f0ac8d22dbcea841d.js": "/precache-manifest.ca9f003efe0f476f0ac8d22dbcea841d.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.86ebb828.chunk.css.map": "/static/css/main.86ebb828.chunk.css.map",
+    "static/css/main.1401dc98.chunk.css.map": "/static/css/main.1401dc98.chunk.css.map",
     "static/js/2.b3d8ac97.chunk.js.LICENSE.txt": "/static/js/2.b3d8ac97.chunk.js.LICENSE.txt",
     "static/media/android_logo.png": "/static/media/android_logo.28b5e276.png",
     "static/media/asteroids.jpg": "/static/media/asteroids.c8ab11b3.jpg",
@@ -20,7 +20,7 @@
   "entrypoints": [
     "static/js/runtime-main.61c1d36a.js",
     "static/js/2.b3d8ac97.chunk.js",
-    "static/css/main.86ebb828.chunk.css",
-    "static/js/main.4889330b.chunk.js"
+    "static/css/main.1401dc98.chunk.css",
+    "static/js/main.a7dadd67.chunk.js"
   ]
 }
