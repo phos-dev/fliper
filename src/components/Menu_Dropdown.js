@@ -38,8 +38,8 @@ const Dropdown = ({text}) => {
                                 <li>Teste 6</li>
                             </ul>
                         </div>
+                        <div ref={setArrowElement} style={styles.arrow} />
                     </div>
-                    <div ref={setArrowElement} style={styles.arrow} />
                 </div>
                 :
                 null

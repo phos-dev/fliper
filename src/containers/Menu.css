@@ -1,6 +1,6 @@
 .Menu {
     display: grid;
-    grid-template-columns: repeat(6, 150px);
+    grid-template-columns: repeat(auto-fit, minmax(150px, max-content));
     justify-content: center;
     color: #61dafb;
     background-image: linear-gradient(to top, #20232a, #1d2126, #1b1e23, #181c1f, #16191c, #16191c, #16191c, #16191c, #181c1f, #1b1e23, #1d2126, #20232a);
