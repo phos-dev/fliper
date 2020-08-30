@@ -1,6 +1,7 @@
 .head {
     min-height: 100px;
-    display: grid;
+    display: flex;
+    gap: 5px;
     text-align: center;
     justify-content: center;
     color: #61dafb;

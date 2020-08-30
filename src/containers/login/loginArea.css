@@ -1,0 +1,51 @@
+.loginArea {
+    display: flex;
+    width: fit-content;
+    flex-direction: column;
+    gap: 20px;
+    color: white;
+}
+.min-vh-75 {
+    min-height: 75vh;
+}
+*:focus {
+    outline: none;
+}
+.inputArea {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.inputArea input {
+    border: none;
+    border-radius: 20px;
+    height: 50px;
+    padding-left: 20px;
+    -webkit-box-shadow: inset 0px 2px 7px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 2px 7px -1px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 2px 7px -1px rgba(0,0,0,0.75);
+}
+.forgotPassword {
+    font-size: 13px;
+    text-decoration: underline;
+    font-weight: bold;
+    text-align: right;
+}
+.Footer {
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+}
+.clickable {
+    text-decoration: underline;
+    font-weight: bold;
+}
+.clickable:hover, .forgotPassword:hover {
+    cursor: pointer;
+}
+.middleContainer {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    color: #d0d0d0;
+}

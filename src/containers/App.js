@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import {connect} from 'react-redux';
-import Area from './Area';
-import CardList from './CardList.js';
+import Register from './register/register.js';
+import CardList from './home/CardList.js';
 import TopBar from './topbar';
 import './App.css';
-import Login from './Login';
-
+import LoginArea from './login/loginArea';
 const mapStateToProps = state => {
     return {
         actualPage: state.pageController.actualPage
@@ -13,24 +13,28 @@ const mapStateToProps = state => {
 }
 
 class App extends Component {
-    showPG = (actualPage) => {
-        switch(actualPage) {
+    showPage = (actualPage) => {
+        switch (actualPage) {
             case 'HOME':
                 return <CardList/>
             case 'LOGIN':
-                return <Login/>
+                return <LoginArea/>
             default:
-                return <Area/>
+                return <CardList/>
         }
     }
     render() {
         const {actualPage} = this.props;
         console.log(actualPage);
         return (
-            <div>
+            <BrowserRouter>
                 <TopBar/>
-                {this.showPG(actualPage)}
-            </div>
+                <Switch>
+                    <Route path="/" exact={true} component={CardList}/>
+                    <Route path="/login" component={LoginArea}/>
+                    <Route path="/register" component={Register}/>
+                </Switch>
+            </BrowserRouter>
         );
     }
 }

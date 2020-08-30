@@ -14,7 +14,7 @@ class Button extends Component {
     render() {
         const {changePage} = this.props;
         return (
-            <div className='Button' onClick={() => changePage(this.Get_Page())}>
+            <div className='Button grow' onClick={() => changePage(this.Get_Page())}>
                 <div className='text'>{this.props.text}</div>
             </div>
         );

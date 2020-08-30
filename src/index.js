@@ -7,6 +7,7 @@ import {Provider} from 'react-redux';
 import {createStore, applyMiddleware, combineReducers} from 'redux';
 import {createLogger} from 'redux-logger';
 import {addToCatalog, pageController} from './reducers';
+import 'tachyons';
 
 const rootReducer = combineReducers({addToCatalog, pageController});
 const store = createStore(rootReducer, applyMiddleware(createLogger()));
