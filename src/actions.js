@@ -1,4 +1,4 @@
-import {ADD_GAME, CHANGE_PAGE} from './constants'; 
+import {ADD_GAME, CHANGE_PAGE, LOGIN} from './constants'; 
 
 export const newGame = (gameObj) => ({
     type : ADD_GAME, 
@@ -8,4 +8,9 @@ export const newGame = (gameObj) => ({
 export const changePage = (page) => ({
     type : CHANGE_PAGE, 
     payload: page
+})
+
+export const login = (response) => ({
+    type: LOGIN,
+    payload: response
 })

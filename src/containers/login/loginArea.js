@@ -1,9 +1,22 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
 import GoogleLogo from '../../pics/google_logo.png';
 import Button from '../../components/button';
 import {Link} from 'react-router-dom';
 import './loginArea.css';
+import { login, changePage } from '../../actions';
 
+const mapDispatchToProps = dispatch => {
+    return {
+        login: (response) => dispatch(login(response)),
+        changePage: (page) => dispatch(changePage(page))
+    }
+}
+const mapStateToProps = state => {
+    return {
+        logged: state.profileController.logged
+    }
+}
 class LoginArea extends Component {
     constructor(){
         super();
@@ -29,8 +42,10 @@ class LoginArea extends Component {
         })
         .then(response => response.json())
         .then(data => {
-            if(data === 'success'){
-                console.log("sucess")
+            if(data === 'LOGIN_SUCESS') {    
+                const {login, changePage} = this.props;
+                login('LOGIN_SUCESS');
+                changePage('GO_TO_PROFILE_PAGE');
             }
         })
     }
@@ -56,10 +71,9 @@ class LoginArea extends Component {
                     </div>
                 </div>
             </div>
-            
         );
     }
     
 }
 
-export default LoginArea;
+export default connect(mapStateToProps, mapDispatchToProps)(LoginArea);

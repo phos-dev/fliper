@@ -6,6 +6,9 @@ import {
     GO_TO_RANDOM_GAME_PAGE,
     GO_TO_ABOUT_PAGE,
     GO_TO_UPLOAD_PAGE,
+    GO_TO_PROFILE_PAGE,
+    LOGIN_SUCESS,
+    LOGOUT
 } from './constants'; 
 
 const initialState = {
@@ -20,6 +23,7 @@ export const addToCatalog = (state=initialState, action={}) => {
             return state;
     }
 }
+
 const initialPageState = {
     actualPage: 'HOME',
 }
@@ -37,8 +41,26 @@ export const pageController = (state=initialPageState, action={}) => {
             return Object.assign({}, state, {actualPage: 'UPLOAD'});
         case GO_TO_ABOUT_PAGE:
             return Object.assign({}, state, {actualPage: 'ABOUT'});
+        case GO_TO_PROFILE_PAGE:
+            return Object.assign({}, state, {actualPage: 'PROFILE'});
         default:
             return state; 
         
+    }
+}
+
+const profileState = {
+    logged: false
+}
+
+export const profileController = (state=profileState, action={}) => {
+    console.log(state);
+    switch(action.payload) {
+        case LOGIN_SUCESS:
+            return Object.assign({}, state, {logged: true});
+        case LOGOUT:
+            return Object.assign({}, state, {logged: false});
+        default:
+            return state;
     }
 }
