@@ -21,30 +21,32 @@ class LoginArea extends Component {
     constructor(){
         super();
         this.state = {
-            email: '',
+            login: '',
             password: ''
         }
     }
-    onEmailChange = (event) => {
-        this.setState({email: event.target.value});
+    onLoginChange = (event) => {
+        this.setState({login: event.target.value});
     }
     onPasswordChange = (event) => {
         this.setState({password: event.target.value});
     }
     onSignin = () => {
+        console.log(this.state);
         fetch('http://localhost:3001/login', {
             method: 'post',
             headers: {'Content-Type' : 'application/json'},
             body: JSON.stringify({
-                email: this.state.email,
+                login: this.state.login,
                 password: this.state.password
             })
         })
         .then(response => response.json())
         .then(data => {
-            if(data === 'LOGIN_SUCESS') {    
+            console.log(data)
+            if(data === 'LOGIN_SUCCESS') {    
                 const {login, changePage} = this.props;
-                login('LOGIN_SUCESS');
+                login('LOGIN_SUCCESS');
                 changePage('GO_TO_PROFILE_PAGE');
             }
         })
@@ -56,7 +58,7 @@ class LoginArea extends Component {
                     <div className="tc b f3 title"> LOGIN</div>
                     <Button color="#666664" logo={GoogleLogo} text="ENTRE COM SEU EMAIL DO GOOGLE" type="SignIn"/>
                     <div className="inputArea">
-                        <input type="email" placeholder="Digite seu e-mail" onChange={this.onEmailChange}/>
+                        <input type="text" placeholder="Digite seu e-mail ou o nome de usuário" onChange={this.onLoginChange}/>
                         <input type="password" placeholder="Digite sua senha" onChange={this.onPasswordChange}/>
                     </div>
                     <div className="forgotPassword dim">

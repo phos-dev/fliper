@@ -8,5 +8,5 @@ export const GO_TO_UPLOAD_PAGE = 'GO_TO_UPLOAD_PAGE';
 export const GO_TO_PROFILE_PAGE = 'GO_TO_PROFILE_PAGE';
 export const CHANGE_PAGE = 'CHANGE_PAGE';
 export const LOGIN = 'LOGIN';
-export const LOGIN_SUCESS = 'LOGIN_SUCESS';
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGOUT = 'LOGOUT';

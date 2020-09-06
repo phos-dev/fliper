@@ -7,7 +7,7 @@ import {
     GO_TO_ABOUT_PAGE,
     GO_TO_UPLOAD_PAGE,
     GO_TO_PROFILE_PAGE,
-    LOGIN_SUCESS,
+    LOGIN_SUCCESS,
     LOGOUT
 } from './constants'; 
 
@@ -56,7 +56,7 @@ const profileState = {
 export const profileController = (state=profileState, action={}) => {
     console.log(state);
     switch(action.payload) {
-        case LOGIN_SUCESS:
+        case LOGIN_SUCCESS:
             return Object.assign({}, state, {logged: true});
         case LOGOUT:
             return Object.assign({}, state, {logged: false});
