@@ -18,16 +18,105 @@ const ProfileInfo = styled.div`
     display: grid;
     justify-items: center;
     margin: 20px;
-
+    text-align: center;
+    color: #61DAFB;
+    width: 300px;
 `;
 const InfoBox = styled.div`
     display: grid;
-    grid-template-columns: 1fr 1fr;
     background: rgba(56, 62, 74, 0.3);
     width: 100%;
     border-radius: 10px;
     min-height: 200px;
+    justify-content: center;
+    align-items:center;
+    padding-left: 10px;
 `;
+const InfoTemplate = ({className, element, show, link}) => {
+    return (
+        <div className={className}>
+            <div>{element}: </div>
+            {
+                link
+                ?
+                <div className='value'><a href={link}>{show}</a></div>
+                :
+                <div className='value'>{show}</div>
+            }
+        </div>
+    );
+}
+const Info = styled(InfoTemplate)`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: #61DAFB;
+    font-size: 0.6rem;
+    font-family: 'Press Start 2P', cursive;
+
+    & .value {
+        font-size: 0.6rem;
+        font-family: 'Press Start 2P';
+        color: white;
+    }
+
+    & a {
+        text-decoration: none;
+        color: white;
+    }
+     
+    & a:hover {
+        color: blue;
+    }
+`;
+
+const GameBar = styled.div`
+    display: flex;
+    align-items: center;
+    background-color: grey;
+    border-radius: 10px;
+    justify-content: space-between;
+    padding: 0px 10px;
+    width: 100%
+    & h2 {
+        width: 300px;
+    }
+`;
+
+const Games = styled.div`
+    display: flex;
+    flex-direction: column;
+    background-color: grey;
+    border-radius: 10px;
+    padding: 20px;
+    gap: 20px;
+`;
+
+const GameCompTemplate = ({className, name, img, description}) => {
+    return (
+        <div className={className}>
+            <img src={img} alt={name} height='300px' width='auto'/>
+            <div className='info'>
+                <div className='title'>{name}</div>
+                <div className='description'>{description}</div>
+            </div>
+        </div>
+    );
+}
+
+const GameComp = styled(GameCompTemplate)`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: start;
+    & .info {
+        display: grid;
+        align-content: center;
+        margin-left: 0px;
+    }
+    & img {
+        border-radius: 10px
+    }
+`;
+
 class Profile extends Component {
     render() {
         const {logged} = this.props;
@@ -44,11 +133,26 @@ class Profile extends Component {
                 <Page>
                     <ProfileInfo>
                         <ProfilePicture src={profile} width='200px' height='auto'/>
-                        <h2>Teste Name</h2>
+                        <h2>Anya Kovarova</h2>
+                        <h3>Info</h3>
                         <InfoBox>
+                            <Info element='Online' show='12h atrás'/>
+                            <Info element='Projects' show='0'/>
+                            <Info element='Upvotes' show='0'/>
+                            <Info element='Github' show='anya-git' link="https://www.google.com"/>
+                            <Info element='Facebook' show='Anya Kovarova' link="https://google.com"/>
                         </InfoBox>
                     </ProfileInfo>
-                    <h1>LOGADssO</h1>
+                    <div  style={{display: 'grid', gridTemplateRows: '0fr auto',gap: '10px', width: '100%', padding: '10px 10px'}}>
+                        <GameBar>
+                            <h2>Projects List</h2>
+                            <input type="text" style={{justifySelf: 'flex-end'}}></input>
+                        </GameBar>
+                        <Games>
+                            <GameComp name="Teste Um" img={profile} description="Loremsa saos saokdopk askokospk koaskopask kasopkoapk oakspoksdpa ksaodpkadopk a skdo akoak"/>
+                            <GameComp name="Teste Um" img={profile} description="Loremsa saos saokdopk askokospk koaskopask kasopkoapk oakspoksdpa ksaodpkadopk a skdo akoak"/>
+                        </Games>
+                    </div>
                 </Page>
             );
         }
