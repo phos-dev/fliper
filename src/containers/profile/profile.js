@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import {connect} from 'react-redux';
 import profile from '../../pics/profile.jpg';
 import game from '../../pics/asteroids.jpg';
+import Card from '../../components/Card';
 const mapStateToProps = state => {
     return {
         logged: state.profileController.logged
@@ -86,54 +87,9 @@ const GameBar = styled.div`
 
 const Games = styled.div`
     display: flex;
-    flex-direction: column;
-    background-color: grey;
     border-radius: 10px;
-    padding: 20px;
+    padding-top: 20px;
     gap: 20px;
-`;
-
-const GameCompTemplate = ({className, name, img, description, version, lastUpdate}) => {
-    return (
-        <div className={className}>
-            <img src={img} alt={name} height='300px' width='auto'/>
-            <div className='info'>
-                <div className='title'>{name}</div>
-                <div className='about'>
-                    <div className='version'>Version: {version}</div>
-                    <div className='updates'>Last Update: {lastUpdate}</div>
-                </div>
-                <div className='description'>{description}</div>
-            </div>
-        </div>
-    );
-}
-
-const GameComp = styled(GameCompTemplate)`
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    justify-content: start;
-    gap: 10px;
-    & .info {
-        display: grid;
-        align-content: start;
-    }
-    & .title {
-        margin-bottom: 10px;
-    }
-    & .description {
-        margin-top: 10px;
-        width: 100%;
-    }
-    & .about {
-        font-weight: bold;
-    }
-    & .version div {
-        font-style: italic;
-    }
-    & img {
-        border-radius: 10px
-    }
 `;
 
 class Profile extends Component {
@@ -165,13 +121,11 @@ class Profile extends Component {
                     <div  style={{display: 'grid', gridTemplateRows: '0fr auto',gap: '10px', width: '100%', padding: '10px 10px'}}>
                         <GameBar>
                             <h2>Projects List</h2>
-                            <input type="text" style={{justifySelf: 'flex-end'}}></input>
+                            <input type="text" style={{justifySelf: 'flex-end'}} placeholder="Search a project"></input>
                         </GameBar>
                         <Games>
-                            <GameComp name="Asteroids" version="1.2.1" lastUpdate="2 months ago" img={game} description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in fermentum ante. Duis id nulla varius, rutrum justo et, convallis tortor. Aliquam feugiat tincidunt ex ac ornare. Donec eget velit erat. Pellentesque ultrices urna ex, vitae pharetra nisi auctor vel. Maecenas at magna leo. Pellentesque sed nibh ultricies, imperdiet eros vitae, ultricies mauris. Morbi non nisl sagittis, congue nisl ut, tempor ex. Sed justo leo, elementum et ex at, aliquam egestas libero. In efficitur elementum diam ut consequat. Nam viverra bibendum sapien id volutpat. Ut nisl nulla, euismod et vulputate nec, venenatis at odio. Aliquam gravida velit et velit gravida, posuere gravida nulla ornare. Praesent sit amet tempus libero. Vestibulum et tortor massa. Phasellus ut auctor nisl."/>
-                            <GameComp name="Asteroids" img={game} description="Loremsa saos saokdopk askokospk koaskopask kasopkoapk oakspoksdpa ksaodpkadopk a skdo akoak"/>
-                            <GameComp name="Asteroids" img={game} description="Loremsa saos saokdopk askokospk koaskopask kasopkoapk oakspoksdpa ksaodpkadopk a skdo akoak"/>
-                            <GameComp name="Asteroids" img={game} description="Loremsa saos saokdopk askokospk koaskopask kasopkoapk oakspoksdpa ksaodpkadopk a skdo akoak"/>
+                            <Card gamename='Asteroids'/>
+                            <Card gamename='sa'/>
                         </Games>
                     </div>
                 </Page>

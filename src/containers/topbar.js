@@ -56,7 +56,7 @@ const TopBar = () => {
             <Link className="Upload" to="/upload" style={{textDecoration: 'none'}}>
                 <MenuButton text="Upload"/>
             </Link>
-            <input type="text" placeholder="Find a game"></input>
+            <input type="text" placeholder="Search a project or an user"></input>
             <Link className="Profile" to="/profile" style={{textDecoration: 'none'}}>
                 <ProfileIcon/>
             </Link>

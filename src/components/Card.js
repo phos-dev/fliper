@@ -10,8 +10,8 @@ const CardComponent = styled.div`
     background-color: #7E889F;
     justify-content: center;
     align-items: center;
-    border-radius: 10%;
-
+    border-radius: 10px;
+    
     & h1 {
         overflow-wrap: break-word;
         max-width: 90%;
@@ -21,6 +21,9 @@ const CardComponent = styled.div`
         font-family: 'Press Start 2P', cursive;
         line-height: 17px;
     }
+    & img {
+        border-radius: 10px;
+    }
     &:hover {
         cursor: pointer;
         transform: scale(1.15);
@@ -29,12 +32,11 @@ const CardComponent = styled.div`
 
 const NotFoundImg = styled.div`
     display:flex;
-    margin-top: 10px;
     justify-content: center;
     align-items: center;
-    border-radius: 10%;
-    height: 160px;
-    width: 170px;
+    border-radius: 10px;
+    height: 250px;
+    width: 200px;
     font-family: 'Press Start 2P';
     color: rgb(51, 51, 51);
     background-color: gray;
@@ -47,8 +49,8 @@ const NotFoundImg = styled.div`
 
 class Card extends Component {
 
-    constructor (props) {
-        super(props);
+    constructor () {
+        super();
         this.state = {
             hasError: false,
             photo: ''
