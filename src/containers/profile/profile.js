@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import {connect} from 'react-redux';
 import profile from '../../pics/profile.jpg';
+import game from '../../pics/asteroids.jpg';
+import Card from '../../components/Card';
+import CardList from '../home/CardList';
 const mapStateToProps = state => {
     return {
         logged: state.profileController.logged
@@ -10,17 +13,30 @@ const mapStateToProps = state => {
 const Page = styled.div`
     display: flex;
     gap: 10px;
+    @media screen and (max-width: 550px) {
+        & {
+            justify-content: center;
+            flex-direction: column;
+        }
+    }
 `;
 const ProfilePicture = styled.img`
     border-radius: 50%;
 `;
 const ProfileInfo = styled.div`
-    display: grid;
-    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 20px;
     text-align: center;
     color: #61DAFB;
     width: 300px;
+
+    @media screen and (max-width: 550px) {
+        & {
+            margin: 20px auto;
+        }
+    }
 `;
 const InfoBox = styled.div`
     display: grid;
@@ -82,41 +98,6 @@ const GameBar = styled.div`
     }
 `;
 
-const Games = styled.div`
-    display: flex;
-    flex-direction: column;
-    background-color: grey;
-    border-radius: 10px;
-    padding: 20px;
-    gap: 20px;
-`;
-
-const GameCompTemplate = ({className, name, img, description}) => {
-    return (
-        <div className={className}>
-            <img src={img} alt={name} height='300px' width='auto'/>
-            <div className='info'>
-                <div className='title'>{name}</div>
-                <div className='description'>{description}</div>
-            </div>
-        </div>
-    );
-}
-
-const GameComp = styled(GameCompTemplate)`
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-content: start;
-    & .info {
-        display: grid;
-        align-content: center;
-        margin-left: 0px;
-    }
-    & img {
-        border-radius: 10px
-    }
-`;
-
 class Profile extends Component {
     render() {
         const {logged} = this.props;
@@ -146,12 +127,12 @@ class Profile extends Component {
                     <div  style={{display: 'grid', gridTemplateRows: '0fr auto',gap: '10px', width: '100%', padding: '10px 10px'}}>
                         <GameBar>
                             <h2>Projects List</h2>
-                            <input type="text" style={{justifySelf: 'flex-end'}}></input>
+                            <input type="text" style={{justifySelf: 'flex-end'}} placeholder="Search a project"></input>
                         </GameBar>
-                        <Games>
-                            <GameComp name="Teste Um" img={profile} description="Loremsa saos saokdopk askokospk koaskopask kasopkoapk oakspoksdpa ksaodpkadopk a skdo akoak"/>
-                            <GameComp name="Teste Um" img={profile} description="Loremsa saos saokdopk askokospk koaskopask kasopkoapk oakspoksdpa ksaodpkadopk a skdo akoak"/>
-                        </Games>
+                        <CardList>
+                            <Card gamename='Asteroids'/>
+                            <Card gamename='sa'/>
+                        </CardList>
                     </div>
                 </Page>
             );

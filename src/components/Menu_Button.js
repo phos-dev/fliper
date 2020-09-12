@@ -12,9 +12,10 @@ class Button extends Component {
         return 'GO_TO_'.concat(this.props.text.toUpperCase().replace(' ', '_'), '_PAGE');
     }
     render() {
-        const {changePage} = this.props;
+        const {changePage, className} = this.props;
+        const classes = `${className} Button grow`;
         return (
-            <div className='Button grow' onClick={() => changePage(this.Get_Page())}>
+            <div className={classes} onClick={() => changePage(this.Get_Page())}>
                 <div className='text'>{this.props.text}</div>
             </div>
         );
