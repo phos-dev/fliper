@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import profile from '../../pics/profile.jpg';
 import game from '../../pics/asteroids.jpg';
 import Card from '../../components/Card';
+import CardList from '../home/CardList';
 const mapStateToProps = state => {
     return {
         logged: state.profileController.logged
@@ -12,6 +13,12 @@ const mapStateToProps = state => {
 const Page = styled.div`
     display: flex;
     gap: 10px;
+    @media screen and (max-width: 550px) {
+        & {
+            justify-content: center;
+            flex-direction: column;
+        }
+    }
 `;
 const ProfilePicture = styled.img`
     border-radius: 50%;
@@ -24,6 +31,12 @@ const ProfileInfo = styled.div`
     text-align: center;
     color: #61DAFB;
     width: 300px;
+
+    @media screen and (max-width: 550px) {
+        & {
+            margin: 20px auto;
+        }
+    }
 `;
 const InfoBox = styled.div`
     display: grid;
@@ -85,13 +98,6 @@ const GameBar = styled.div`
     }
 `;
 
-const Games = styled.div`
-    display: flex;
-    border-radius: 10px;
-    padding-top: 20px;
-    gap: 20px;
-`;
-
 class Profile extends Component {
     render() {
         const {logged} = this.props;
@@ -123,10 +129,10 @@ class Profile extends Component {
                             <h2>Projects List</h2>
                             <input type="text" style={{justifySelf: 'flex-end'}} placeholder="Search a project"></input>
                         </GameBar>
-                        <Games>
+                        <CardList>
                             <Card gamename='Asteroids'/>
                             <Card gamename='sa'/>
-                        </Games>
+                        </CardList>
                     </div>
                 </Page>
             );
