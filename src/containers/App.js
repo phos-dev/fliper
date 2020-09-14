@@ -7,10 +7,12 @@ import TopBar from './TopBar';
 import Profile from './profile/profile';
 import './App.css';
 import LoginArea from './login/loginArea';
+
 const mapStateToProps = state => {
     return {
         actualPage: state.pageController.actualPage,
-        logged: state.profileController.logged
+        logged: state.profileController.logged,
+        Games: state.catalogController.Games
     }
 }
 
@@ -27,6 +29,7 @@ class App extends Component {
                 return <Redirect to='/' />
         }
     }
+    
     render() {
         const {actualPage, logged} = this.props;
         return (
@@ -34,7 +37,7 @@ class App extends Component {
                 <TopBar/>
                 {this.showPage(actualPage)}
                 <Switch>
-                    <Route path="/" exact={true} component={CardList}/>
+                    <Route path="/" exact={true} component={() => <CardList Games={this.props.Games}/>} />
                     <Route path="/login" component={LoginArea}/>
                     <Route path="/register" component={Register}/>
                     <Route path="/profile" component={Profile}/>

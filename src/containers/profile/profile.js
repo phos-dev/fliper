@@ -91,10 +91,19 @@ const GameBar = styled.div`
     background-color: grey;
     border-radius: 10px;
     justify-content: space-between;
-    padding: 0px 10px;
-    width: 100%
+    padding: 5px 10px;
+    width: 100%;
+    margin-bottom: 20px;
+    & input {
+        border-radius: 9px;
+        border: 1px solid silver;
+        text-align: center;
+        padding: 5px;
+    }
     & h2 {
-        width: 300px;
+        font-size: 13px;
+        font-family: 'Press Start 2P';
+        color: black;
     }
 `;
 
@@ -103,14 +112,6 @@ class Profile extends Component {
         const {logged} = this.props;
         if(logged === true) {
             return(
-                <div style={{display: 'flex'}}>
-                    <h1>LOGADO</h1>
-                    <h1>LOGADssO</h1>
-                </div>
-            );
-        }
-        else {
-            return (
                 <Page>
                     <ProfileInfo>
                         <ProfilePicture src={profile} width='200px' height='auto'/>
@@ -134,6 +135,13 @@ class Profile extends Component {
                             <Card gamename='sa'/>
                         </CardList>
                     </div>
+                </Page>
+            );
+        }
+        else {
+            return (
+                <Page style={{display: 'flex', height: 'calc(100vh - 60px)', justifyContent: 'center', alignItems: 'center'}}>
+                    <h1>Não está logado!</h1>
                 </Page>
             );
         }

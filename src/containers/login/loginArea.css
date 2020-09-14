@@ -4,9 +4,7 @@
     flex-direction: column;
     gap: 20px;
     color: white;
-}
-.min-vh-75 {
-    min-height: 75vh;
+    margin: auto;
 }
 *:focus {
     outline: none;

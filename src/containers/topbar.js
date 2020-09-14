@@ -1,9 +1,22 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 import ProfileIcon from '../components/profile/profile_button';
 import MenuButton from '../components/Menu_Button.js';
+import {searchGame, newGame} from '../actions';
+import {connect} from 'react-redux';
 
+const mapStateToProps = state => {
+    return {
+        toSearch: state.catalogController.toSearch
+    }
+}
+const mapDispatchToProps = dispatch => {
+    return {
+        searchGame : event => dispatch(searchGame(event)),
+        onSearch : data => dispatch(newGame(data))
+    }
+}
 const Header = styled.div`
     margin: '5px 10px 5px auto';
     display: grid;
@@ -16,9 +29,15 @@ const Header = styled.div`
         display: grid;
         justify-self: center;
     }
-    .Logo {
+    & .Logo {
         justify-self: left;
         margin-left: 20px;
+    }
+    & input {
+        border-radius: 10px;
+        border: 1px solid silver;
+        text-align: center;
+        padding: 5px;
     }
     @media screen and (max-width: 968px) {
         & {
@@ -45,23 +64,47 @@ const Logo = styled.div`
     font-size: 2rem;
     font-family: 'Press Start 2P', cursive;
 `;
-const TopBar = () => {
-    return (
-        <Header>
-            <Logo className="Logo">FliPER</Logo>
-            <Link className="Login" to="/login" style={{textDecoration: 'none'}}>
-                <MenuButton text="Login"/>
-            </Link>
-            <MenuButton className="RandomGame" text="Random Game" />
-            <Link className="Upload" to="/upload" style={{textDecoration: 'none'}}>
-                <MenuButton text="Upload"/>
-            </Link>
-            <input type="text" placeholder="Search a project or an user"></input>
-            <Link className="Profile" to="/profile" style={{textDecoration: 'none'}}>
-                <ProfileIcon/>
-            </Link>
-        </Header>
-    );
+class TopBar extends Component {
+
+    onSearchBarChange = (event) => {
+        this.props.searchGame({toSearch: event.target.value});
+        fetch("http://localhost:3001/search", 
+        {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'user-key': 'd0205a3f20063d4b4779d67d81a09875'
+            },
+            body: JSON.stringify({ 
+                name: event.target.value
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            const {onSearch} = this.props;
+            console.log('Search:', this.props.toSearch, 'Received:', data);
+            onSearch(data);
+        })
+    }
+    render() {
+        return (
+            <Header>
+                <Logo className="Logo">FliPER</Logo>
+                <Link className="Login" to="/login" style={{textDecoration: 'none'}}>
+                    <MenuButton text="Login"/>
+                </Link>
+                <MenuButton className="RandomGame" text="Random Game" />
+                <Link className="Upload" to="/upload" style={{textDecoration: 'none'}}>
+                    <MenuButton text="Upload"/>
+                </Link>
+                <input type="text" placeholder="Search a project or an user" onChange={this.onSearchBarChange}></input>
+                <Link className="Profile" to="/profile" style={{textDecoration: 'none'}}>
+                    <ProfileIcon/>
+                </Link>
+            </Header>
+        );
+    }
+    
 }
 
-export default TopBar;
+export default connect(mapStateToProps, mapDispatchToProps)(TopBar);
