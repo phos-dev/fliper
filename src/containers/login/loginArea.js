@@ -5,7 +5,7 @@ import Button from '../../components/button';
 import {Link} from 'react-router-dom';
 import './loginArea.css';
 import { login, changePage } from '../../actions';
-
+import styled from 'styled-components';
 const mapDispatchToProps = dispatch => {
     return {
         login: (response) => dispatch(login(response)),
@@ -17,6 +17,7 @@ const mapStateToProps = state => {
         logged: state.profileController.logged
     }
 }
+
 class LoginArea extends Component {
     constructor(){
         super();
@@ -53,24 +54,22 @@ class LoginArea extends Component {
     }
     render() {
         return (
-            <div className="flex min-vh-75 justify-center items-center">
-                <div className="loginArea w-30">
-                    <div className="tc b f3 title"> LOGIN</div>
-                    <Button color="#666664" logo={GoogleLogo} text="ENTRE COM SEU EMAIL DO GOOGLE" type="SignIn"/>
-                    <div className="inputArea">
-                        <input type="text" placeholder="Digite seu e-mail ou o nome de usuário" onChange={this.onLoginChange}/>
-                        <input type="password" placeholder="Digite sua senha" onChange={this.onPasswordChange}/>
-                    </div>
-                    <div className="forgotPassword dim">
-                        esqueci minha senha
-                    </div>
-                    <Button color="#e1e1e1" text="ENTRAR" onClick={this.onSignin}/>
-                    <div className="Footer">
-                        Não tem cadastro? 
-                        <Link to="/register" style={{textDecoration: "none", color: "white"}}>
-                            <div className="clickable dim">cadastre-se aqui.</div>
-                        </Link>
-                    </div>
+            <div className="loginArea">
+                <div className="tc b f3 title"> LOGIN</div>
+                <Button color="#666664" logo={GoogleLogo} text="ENTRE COM SEU EMAIL DO GOOGLE" type="SignIn"/>
+                <div className="inputArea">
+                    <input type="text" placeholder="Digite seu e-mail ou o nome de usuário" onChange={this.onLoginChange}/>
+                    <input type="password" placeholder="Digite sua senha" onChange={this.onPasswordChange}/>
+                </div>
+                <div className="forgotPassword dim">
+                    esqueci minha senha
+                </div>
+                <Button color="#e1e1e1" text="ENTRAR" onClick={this.onSignin}/>
+                <div className="Footer">
+                    Não tem cadastro? 
+                    <Link to="/register" style={{textDecoration: "none", color: "white"}}>
+                        <div className="clickable dim">cadastre-se aqui.</div>
+                    </Link>
                 </div>
             </div>
         );

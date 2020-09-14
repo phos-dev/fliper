@@ -10,3 +10,4 @@ export const CHANGE_PAGE = 'CHANGE_PAGE';
 export const LOGIN = 'LOGIN';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGOUT = 'LOGOUT';
+export const SEARCH = 'SEARCH';

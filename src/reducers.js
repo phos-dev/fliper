@@ -1,5 +1,6 @@
 import {
     ADD_GAME,
+    SEARCH,
     GO_TO_LOGIN_PAGE,
     GO_TO_REGISTER_PAGE,
     GO_TO_HOME_PAGE,
@@ -13,12 +14,15 @@ import {
 
 const initialState = {
     Games : [],
+    toSearch: ''
 }
 
-export const addToCatalog = (state=initialState, action={}) => {
+export const catalogController = (state=initialState, action={}) => {
     switch(action.type) {
         case ADD_GAME:
-            return Object.assign({}, state, {Games : state.Games.concat([action.payload])});
+            return Object.assign({}, state, {Games: action.payload, toSearch: state.toSearch});
+        case SEARCH:
+            return Object.assign({}, state, {Games: state.Games, toSearch: action.payload});
         default :
             return state;
     }
@@ -54,7 +58,6 @@ const profileState = {
 }
 
 export const profileController = (state=profileState, action={}) => {
-    console.log(state);
     switch(action.payload) {
         case LOGIN_SUCCESS:
             return Object.assign({}, state, {logged: true});
