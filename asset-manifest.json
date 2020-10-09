@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/static/css/main.f8e114b3.chunk.css",
-    "main.js": "/static/js/main.dc4f221b.chunk.js",
-    "main.js.map": "/static/js/main.dc4f221b.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.61c1d36a.js",
-    "runtime-main.js.map": "/static/js/runtime-main.61c1d36a.js.map",
-    "static/css/2.3c03f26f.chunk.css": "/static/css/2.3c03f26f.chunk.css",
-    "static/js/2.e46f01bc.chunk.js": "/static/js/2.e46f01bc.chunk.js",
-    "static/js/2.e46f01bc.chunk.js.map": "/static/js/2.e46f01bc.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.b9163e629584649b5ade197f742a2f91.js": "/precache-manifest.b9163e629584649b5ade197f742a2f91.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.3c03f26f.chunk.css.map": "/static/css/2.3c03f26f.chunk.css.map",
-    "static/css/main.f8e114b3.chunk.css.map": "/static/css/main.f8e114b3.chunk.css.map",
-    "static/js/2.e46f01bc.chunk.js.LICENSE.txt": "/static/js/2.e46f01bc.chunk.js.LICENSE.txt",
-    "static/media/asteroids.jpg": "/static/media/asteroids.c8ab11b3.jpg",
-    "static/media/google_logo.png": "/static/media/google_logo.d45480e1.png",
-    "static/media/profile.jpg": "/static/media/profile.4d606998.jpg"
+    "main.css": "/fliper/static/css/main.f8e114b3.chunk.css",
+    "main.js": "/fliper/static/js/main.de690372.chunk.js",
+    "main.js.map": "/fliper/static/js/main.de690372.chunk.js.map",
+    "runtime-main.js": "/fliper/static/js/runtime-main.93de6a0e.js",
+    "runtime-main.js.map": "/fliper/static/js/runtime-main.93de6a0e.js.map",
+    "static/css/2.3c03f26f.chunk.css": "/fliper/static/css/2.3c03f26f.chunk.css",
+    "static/js/2.7c39d8b4.chunk.js": "/fliper/static/js/2.7c39d8b4.chunk.js",
+    "static/js/2.7c39d8b4.chunk.js.map": "/fliper/static/js/2.7c39d8b4.chunk.js.map",
+    "index.html": "/fliper/index.html",
+    "precache-manifest.e0fdba602840a26214705a38c1007263.js": "/fliper/precache-manifest.e0fdba602840a26214705a38c1007263.js",
+    "service-worker.js": "/fliper/service-worker.js",
+    "static/css/2.3c03f26f.chunk.css.map": "/fliper/static/css/2.3c03f26f.chunk.css.map",
+    "static/css/main.f8e114b3.chunk.css.map": "/fliper/static/css/main.f8e114b3.chunk.css.map",
+    "static/js/2.7c39d8b4.chunk.js.LICENSE.txt": "/fliper/static/js/2.7c39d8b4.chunk.js.LICENSE.txt",
+    "static/media/asteroids.jpg": "/fliper/static/media/asteroids.c8ab11b3.jpg",
+    "static/media/google_logo.png": "/fliper/static/media/google_logo.d45480e1.png",
+    "static/media/profile.jpg": "/fliper/static/media/profile.4d606998.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.61c1d36a.js",
+    "static/js/runtime-main.93de6a0e.js",
     "static/css/2.3c03f26f.chunk.css",
-    "static/js/2.e46f01bc.chunk.js",
+    "static/js/2.7c39d8b4.chunk.js",
     "static/css/main.f8e114b3.chunk.css",
-    "static/js/main.dc4f221b.chunk.js"
+    "static/js/main.de690372.chunk.js"
   ]
 }
