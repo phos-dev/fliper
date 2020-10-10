@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e86eb3f56e7052fe45fd2e5e1a562817",
+    "revision": "961ca8d1e6e00b970625640682a97712",
     "url": "/fliper/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/fliper/static/css/2.3c03f26f.chunk.css"
   },
   {
-    "revision": "cd95ca5a68347c5a2044",
+    "revision": "6fb12a0aabe1993dae35",
     "url": "/fliper/static/css/main.f8e114b3.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/fliper/static/js/2.4574d614.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "cd95ca5a68347c5a2044",
-    "url": "/fliper/static/js/main.75e1e60f.chunk.js"
+    "revision": "6fb12a0aabe1993dae35",
+    "url": "/fliper/static/js/main.03b0847e.chunk.js"
   },
   {
     "revision": "d24d142056e814e5b471",
