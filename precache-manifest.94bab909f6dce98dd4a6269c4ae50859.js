@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6e24f84270d0d2e85455704262e96a4c",
+    "revision": "13d40e1cc9b924efba7e217ca7c79c0c",
     "url": "/fliper/index.html"
   },
   {
-    "revision": "cdb3f6511480970100e5",
+    "revision": "7ad6f10c0bb5d89ab2b1",
     "url": "/fliper/static/css/2.3c03f26f.chunk.css"
   },
   {
-    "revision": "e6b7d7a8b3c43ef1dac8",
+    "revision": "6a57a1751f63ac876849",
     "url": "/fliper/static/css/main.f8e114b3.chunk.css"
   },
   {
-    "revision": "cdb3f6511480970100e5",
-    "url": "/fliper/static/js/2.7c39d8b4.chunk.js"
+    "revision": "7ad6f10c0bb5d89ab2b1",
+    "url": "/fliper/static/js/2.4574d614.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/fliper/static/js/2.7c39d8b4.chunk.js.LICENSE.txt"
+    "url": "/fliper/static/js/2.4574d614.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e6b7d7a8b3c43ef1dac8",
-    "url": "/fliper/static/js/main.de690372.chunk.js"
+    "revision": "6a57a1751f63ac876849",
+    "url": "/fliper/static/js/main.0a74c0d1.chunk.js"
   },
   {
     "revision": "d24d142056e814e5b471",
