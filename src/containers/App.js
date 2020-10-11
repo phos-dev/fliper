@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 import {connect} from 'react-redux';
 import Register from './register/register.js';
 import CardList from './home/CardList.js';
-import TopBar from './TopBar';
+import TopBar from './Topbar';
 import Profile from './profile/profile';
 import './App.css';
 import LoginArea from './login/loginArea';
