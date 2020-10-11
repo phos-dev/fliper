@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
+import { Switch, Route, Redirect, HashRouter} from 'react-router-dom'
 import {connect} from 'react-redux';
 import Register from './register/register.js';
 import CardList from './home/CardList.js';
@@ -33,7 +33,7 @@ class App extends Component {
     render() {
         const {actualPage, logged} = this.props;
         return (
-            <BrowserRouter>
+            <HashRouter>
                 <TopBar/>
                 {this.showPage(actualPage)}
                 <Switch>
@@ -42,7 +42,7 @@ class App extends Component {
                     <Route path="/register" component={Register}/>
                     <Route path="/profile" component={Profile}/>
                 </Switch>
-            </BrowserRouter>
+            </HashRouter>
         );
     }
 }

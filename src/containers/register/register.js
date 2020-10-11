@@ -18,7 +18,7 @@ class Register extends Component {
         this.setState({[parameter]: event.target.value});
     }
     onSignin = () => {
-        fetch('http://localhost:3001/register', {
+        fetch('https://fliperapi.herokuapp.com/register', {
             method: 'post',
             headers: {'Content-Type' : 'application/json'},
             body: JSON.stringify({
@@ -30,8 +30,9 @@ class Register extends Component {
         })
         .then(response => response.json())
         .then(data => {
-            if(data === 'success'){
-                console.log('logged in')
+            if(data === 'Registred'){
+                console.log('Registered');
+
             }
         })
     }

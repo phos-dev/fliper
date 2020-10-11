@@ -52,11 +52,14 @@ class LoginArea extends Component {
             }
         })
     }
+    onGoogle = () => {
+        window.location.href = 'https://fliperapi.herokuapp.com/auth/google';
+    }
     render() {
         return (
             <div className="loginArea">
                 <div className="tc b f3 title"> LOGIN</div>
-                <Button color="#666664" logo={GoogleLogo} text="ENTRE COM SEU EMAIL DO GOOGLE" type="SignIn"/>
+                <Button color="#666664" logo={GoogleLogo} text="ENTRE COM SEU EMAIL DO GOOGLE" type="SignIn" onClick={this.onGoogle}/>
                 <div className="inputArea">
                     <input type="text" placeholder="Digite seu e-mail ou o nome de usuário" onChange={this.onLoginChange}/>
                     <input type="password" placeholder="Digite sua senha" onChange={this.onPasswordChange}/>
