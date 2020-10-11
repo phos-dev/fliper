@@ -35,7 +35,7 @@ class App extends Component {
         }
     }
     componentDidMount() {
-        fetch('http://fliperapi.herokuapp.com/auth/google/check', {
+        fetch('https://fliperapi.herokuapp.com/auth/google/check', {
             method: "get",
             headers: {'Accept': 'application/json'},
             credentials: 'include'
