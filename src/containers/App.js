@@ -7,12 +7,17 @@ import TopBar from './Topbar';
 import Profile from './profile/profile';
 import './App.css';
 import LoginArea from './login/loginArea';
-
+import {login} from '../actions';
 const mapStateToProps = state => {
     return {
         actualPage: state.pageController.actualPage,
         logged: state.profileController.logged,
         Games: state.catalogController.Games
+    }
+}
+const mapDispatchToProps = dispatch => {
+    return {
+        login: data => dispatch(login(data))
     }
 }
 
@@ -29,7 +34,21 @@ class App extends Component {
                 return <Redirect to='/' />
         }
     }
-    
+    componentDidMount() {
+        fetch('http://fliperapi.herokuapp.com/auth/google/check', {
+            method: "get",
+            headers: {'Accept': 'application/json'},
+            credentials: 'include'
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if(data === 'LOGIN_SUCCESS') {    
+                const {login} = this.props;
+                login('LOGIN_SUCCESS');
+            }
+        })
+    }
     render() {
         const {actualPage, logged} = this.props;
         return (
@@ -46,4 +65,4 @@ class App extends Component {
         );
     }
 }
-export default connect(mapStateToProps, null)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

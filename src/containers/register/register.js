@@ -3,7 +3,14 @@ import GoogleLogo from '../../pics/google_logo.png';
 import Button from '../../components/button';
 import './register.css';
 import { Link } from 'react-router-dom';
+import {changePage} from '../../actions';
+import {connect} from 'react-redux';
 
+const mapDispatchToProps = dispatch => {
+    return {
+        changePage: page => dispatch(changePage(page))
+    }
+}
 class Register extends Component {
     constructor(){
         super();
@@ -32,7 +39,8 @@ class Register extends Component {
         .then(data => {
             if(data === 'Registred'){
                 console.log('Registered');
-
+                const {changePage} = this.props;
+                changePage('GO_TO_PROFILE_PAGE');
             }
         })
     }
@@ -62,4 +70,4 @@ class Register extends Component {
     
 }
 
-export default Register;
+export default connect(null, mapDispatchToProps)(Register);
