@@ -17,14 +17,17 @@ const mapDispatchToProps = dispatch => {
         onSearch : data => dispatch(newGame(data))
     }
 }
+/*
+
+    padding: '5px 10px 5px 10px';
+        justify-content: right; */
 const Header = styled.div`
-    margin: '5px 10px 5px auto';
     display: grid;
     background: rgba(56, 62, 74, 0.3);
     justify-content: center;
     align-items: center;
     width: 100%;
-    grid-template-columns: 1fr auto auto auto 1fr auto;
+    grid-template-columns: 1fr auto auto auto 1fr;
     & div, a {
         display: grid;
         justify-self: center;
@@ -38,6 +41,13 @@ const Header = styled.div`
         border: 1px solid silver;
         text-align: center;
         padding: 5px;
+        flex-grow: 1;
+    }
+    .searchProfileDiv {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        width: 100%;
     }
     @media screen and (max-width: 968px) {
         & {
@@ -50,8 +60,12 @@ const Header = styled.div`
             margin-left: 0px;
             grid-column: span 3;
         }
+        .searchProfileDiv {
+            grid-column: span 3;
+            grid-template-columns: auto auto;
+            justify-content: center;
+        }
         & input {
-            grid-column: span 2;
             width: 300px;
         }
     }
@@ -97,10 +111,12 @@ class TopBar extends Component {
                 <Link className="Upload" to="/upload" style={{textDecoration: 'none'}}>
                     <MenuButton text="Upload"/>
                 </Link>
-                <input type="text" placeholder="Search a project or an user" onChange={this.onSearchBarChange}></input>
-                <Link className="Profile" to="/profile" style={{textDecoration: 'none'}}>
-                    <ProfileIcon/>
-                </Link>
+                <div className="searchProfileDiv">
+                    <input type="text" placeholder="Search a project or an user" onChange={this.onSearchBarChange}></input>
+                    <Link className="Profile" to="/profile" style={{textDecoration: 'none'}}>
+                        <ProfileIcon/>
+                    </Link>
+                </div>
             </Header>
         );
     }
