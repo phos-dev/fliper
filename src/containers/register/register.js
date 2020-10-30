@@ -37,6 +37,7 @@ class Register extends Component {
         })
         .then(response => response.json())
         .then(data => {
+            console.log(data);
             if(data === 'Registred'){
                 console.log('Registered');
                 const {changePage} = this.props;
