@@ -35,7 +35,7 @@ class LoginArea extends Component {
     }
     onSignin = () => {
         console.log(this.state);
-        fetch('http://fliperapi.herokuapp.com/login', {
+        fetch('https://fliperapi.herokuapp.com/login', {
             method: 'post',
             headers: {'Content-Type' : 'application/json'},
             body: JSON.stringify({
