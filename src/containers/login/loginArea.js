@@ -78,7 +78,8 @@ class LoginArea extends Component {
                         <div className="clickable dim">cadastre-se aqui.</div>
                     </Link>
                 </div>
-                <AlertDialog status={status}/>
+                {//<AlertDialog status={status}/>
+                }
             </div>
         );
     }
